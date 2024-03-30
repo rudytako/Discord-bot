@@ -22,27 +22,27 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
  */
 const commands = [
   new SlashCommandBuilder()
-    .setName('search')
-    .setDescription('Tell me what you are looking for')
+    .setName('szukaj')
+    .setDescription('Powiedz nam czego szukasz')
     .addStringOption(option =>
-      option.setName('what-are-you-asking-for')
-        .setDescription('What exactly do you want to find?')
+      option.setName('o-co-prosisz')
+        .setDescription('Co chcesz znaleźć?')
         .setRequired(true))
     .addStringOption(option =>
-      option.setName('from-which-publisher')
-        .setDescription('Publisher')
+      option.setName('z-jakiego-wydawnictwa')
+        .setDescription('Wydawnictwo')
         .setRequired(true)
         .addChoices(
           { name: 'Nowa Era', value: 'Nowa Era' },
           { name: 'WSiP', value: 'WSiP' },
           { name: 'GWO', value: 'GWO' }))
     .addStringOption(option =>
-      option.setName('basic-or-extension')
-        .setDescription('Basic or extension')
+      option.setName('podstawa-czy-rozszerzenie')
+        .setDescription('Podstawa czy rozszerzenie')
         .setRequired(true)
         .addChoices(
-          { name: 'Basic', value: 'basic' },
-          { name: 'Extension', value: 'extended' })),
+          { name: 'Podstawa', value: 'podstawowy' },
+          { name: 'Rozszerzenie', value: 'rozszerzony' })),
 ].map(command => command.toJSON());
 
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
