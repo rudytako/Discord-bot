@@ -8,7 +8,6 @@ const { Routes } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { Client, GatewayIntentBits } = require('discord.js');
 const interactionCreateHandler = require('./handlers/interactionCreateHandler');
-const { token, clientId, guildId } = require('./config');
 
 require('dotenv').config();
 
